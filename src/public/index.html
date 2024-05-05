@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <title> Nyoklat! </title>
+</head>
+<body>
+    <h1> Nyoklat 
+        <img src="https://cdn-icons-png.flaticon.com/512/7817/7817717.png" 
+            alt="Cacao"
+            style="aspect-ratio: 1; width: 35px; transform: rotate(20deg) translateY(5px);"
+        >
+    </h1>
+    <form action="POST" id="nyoklat__form">
+        <div class="form__imageDisplay">
+            <canvas 
+                width="400"
+                height="400"
+                src="#" 
+                alt=""
+                id="form__displayCanvas"
+                class="form__displayCanvas"
+            > </canvas>
+            <div class="imageDisplay__shadow"></div>
+            <p class="imageDisplay__caption"> Insert your image! </p>
+        </div>
+        <input 
+            type="file" 
+            name="chocoImage" 
+            id="form__imageInput"
+            accept="image/png, image/jpg, image/jpeg"
+            style="display: none; "
+        >
+        <div>
+            <button type="reset" id="form__reset"> Reset </button>
+            <button type="submit" > Predict! </button>
+        </div>
+    </form>
+
+    <h2 id="nyoklat__result">The result would be displayed here!</h2>
+
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
