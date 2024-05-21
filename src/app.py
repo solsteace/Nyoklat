@@ -9,6 +9,8 @@ from fastapi.staticfiles import StaticFiles
 from typing import Annotated
 
 from utils.errorHandler import handleError
+from classifier import classify
+from preprocessor import preprocess
 
 APP = FastAPI()
 APP.mount("/static", StaticFiles(directory="public", html=True), name="public" )
@@ -33,6 +35,9 @@ async def predict(image: Annotated[UploadFile, Form()]):
         raise HTTPException(
             **handleError(err)
         )
+
+    img = await image.read()
+    prediction = classify(preprocess(img))
 
     return {
         "detail": "success",
