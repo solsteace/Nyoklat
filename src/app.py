@@ -41,6 +41,6 @@ async def predict(image: Annotated[UploadFile, Form()]):
 
     return {
         "detail": "success",
-        "prediction": "OK"
+        "prediction": prediction
     }
 

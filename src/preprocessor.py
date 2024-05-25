@@ -7,6 +7,8 @@ def preprocess(raw_image: bytes):
         cv2.IMREAD_COLOR
     )
 
-    image = cv2.rotate(image, cv2.ROTATE_90_CLOCKWISE)
+    image = cv2.resize( image, (224, 224))
 
-    return image;
+    # cv2.imwrite("./res.png", image)
+    image = np.expand_dims(image, axis=0);
+    return image
