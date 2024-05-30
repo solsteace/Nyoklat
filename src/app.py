@@ -9,7 +9,7 @@ from fastapi.staticfiles import StaticFiles
 from typing import Annotated
 
 from utils.errorHandler import handleError
-from classifier import classify
+from classifier import classify, init_model
 from preprocessor import preprocess
 
 APP = FastAPI()
@@ -43,4 +43,3 @@ async def predict(image: Annotated[UploadFile, Form()]):
         "detail": "success",
         "prediction": prediction
     }
-
